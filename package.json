@@ -1,38 +1,40 @@
 {
   "private": true,
   "type": "module",
-  "name": "@jkomyno/pnpm-monorepo-example",
+  "name": "@byb/exercise",
   "description": "Practical example of a `TypeScript` monorepo with `pnpm`, `turborepo`, and `vitest`",
-  "repository": "https://github.com/jkomyno/pnpm-monorepo-example.git",
-  "author": {
-    "name": "Alberto Schiabel",
-    "email": "alberto.schiabel@gmail.com"
-  },
   "license": "MIT",
   "engines": {
-    "pnpm": ">=8"
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm",
+    "pnpm": ">= 9.15.3",
+    "node": ">= 20.11.0"
   },
   "scripts": {
     "build": "turbo run build",
     "build:watch": "turbo run build:watch",
     "check:exports": "turbo run check:exports",
-    "clean": "turbo run clean",
+    "clean": "git clean -xdf .turbo build node_modules apps/**/{.turbo,build,node_modules} packages/**/*/{.turbo,build,node_modules}",
+    "clean:workspaces": "turbo run clean",
     "lint:ci": "biome ci",
     "lint": "biome check --fix --unsafe",
     "test": "pnpm -r --if-present test",
+    "test:update": "pnpm -r --if-present test -- --update",
     "test:unit": "pnpm -r --if-present test:unit",
     "test:integration": "pnpm -r --if-present test:integration",
-    "prepare": "is-ci || husky"
+    "prepare": "is-ci || husky",
+    "api:start": "pnpm --filter '@byb/api' start",
+    "api:build": "pnpm --filter '@byb/api' build"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.16.4",
+    "@arethetypeswrong/cli": "^0.17.2",
     "@biomejs/biome": "^1.9.4",
-    "@types/node": "20.9.0",
+    "@types/node": "22.10.5",
     "husky": "^9.1.7",
-    "is-ci": "^3.0.1",
-    "lint-staged": "^15.2.11",
+    "is-ci": "^4.1.0",
+    "lint-staged": "^15.3.0",
     "rimraf": "^6.0.1",
-    "taze": "^0.17.2",
+    "taze": "^0.18.0",
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "turbo": "^2.3.3",

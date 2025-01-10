@@ -5,8 +5,8 @@
 > Pragmatic template for a `TypeScript` monorepo with [`pnpm`](https://pnpm.io), [`turborepo`](https://turborepo.org), and [`vitest`](https://vitest.dev/).
 
 Tested with:
-- **Node.js v20.17.0**
-- **pnpm v9.15.0**
+- **Node.js v20.11.0**
+- **pnpm v9.15.3**
 - **vitest v2.1.8**
 
 ---------------------------------------------
@@ -55,7 +55,7 @@ This allows for easily running groups of tests (for instance, you might want to 
 
 - Create a new folder `$packageName` in [`packages/`](packages/). Initialize it with a `tsconfig.json` file (which will reference the [`tsconfig.base.node.json`](./tsconfig.base.node.json) file at the root level) and a `package.json` file similarly to how it's done in the  [`common-utils`](packages/common-utils) package.
 
-2. How do I add a new depedency that should be available to each package in the local workspace?
+2. How do I add a new dependency that should be available to each package in the local workspace?
 
 > `pnpm add -w $dependencyName`
 

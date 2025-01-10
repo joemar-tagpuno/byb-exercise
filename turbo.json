@@ -3,7 +3,8 @@
   "dangerouslyDisablePackageManagerCheck": true,
   "tasks": {
     "build": {
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "outputs": ["build/**"]
     },
     "build:watch": {},
     "check:exports": {
@@ -14,7 +15,7 @@
     },
     "clean": {
       "cache": false,
-      "outputs": ["packages/*/build"]
+      "outputs": ["packages/*/build", "packages/**/*/build", "apps/*/build"]
     }
   }
 }

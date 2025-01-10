@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`CustomerSecureFileDownload > Everything is ok > can execute the secure download use-case 1`] = `
+{
+  "file": "ZmlsZS1jb250ZW50LWJhc2U2NA==",
+  "filename": "file-name.pdf",
+  "filesize": 124,
+  "filetype": "pdf",
+}
+`;
+
+exports[`CustomerSecureFileDownload > Everything is ok > can guard the secure download use-case 1`] = `false`;

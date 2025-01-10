@@ -1,12 +1,12 @@
-ARG NODE_VERSION="20.9.0"
-ARG PNPM_VERSION="8.15.8"
+ARG NODE_VERSION="20.11.0"
+ARG PNPM_VERSION="9.15.3"
 
 ##
-# Create base image with pnpm installed 
+# Create base image with pnpm installed
 ##
 
 FROM node:${NODE_VERSION}-alpine as jkomyno-pnpm
-LABEL jkomyno/pnpm-monorepo-example.name=pnpm
+LABEL byb/exercise.name=pnpm
 
 RUN apk add git
 RUN apk add --no-cache --upgrade grep

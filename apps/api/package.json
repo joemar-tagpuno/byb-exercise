@@ -1,0 +1,44 @@
+{
+  "name": "@byb/api",
+  "version": "0.1.0",
+  "files": ["build"],
+  "main": "./build/index.js",
+  "module": "./build/index.mjs",
+  "types": "./build/index.d.ts",
+  "private": true,
+  "scripts": {
+    "start": "node build/index.js",
+    "clean": "rimraf build .turbo",
+    "build": "tsup ./src/index.ts --tsconfig ./tsconfig.build.json --config ../../tsup.config.ts",
+    "build:watch": "pnpm build --watch",
+    "check:exports": "attw --pack .",
+    "test": "vitest --workspace ../../vitest.workspace.ts run",
+    "test:unit": "vitest --workspace ../../vitest.workspace.ts --project unit run",
+    "test:integration": "vitest --workspace ../../vitest.workspace.ts --project integration run"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/body-parser": "^1.19.5",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/lodash": "^4.17.14"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.11.3",
+    "@byb/asset-manager-adapters": "workspace:*",
+    "@byb/asset-manager-core": "workspace:*",
+    "@byb/auth-adapters": "workspace:*",
+    "@byb/core": "workspace:*",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "graphql": "^16.10.0",
+    "graphql-scalars": "^1.24.0",
+    "graphql-tag": "^2.12.6",
+    "inversify": "^6.2.1",
+    "lodash": "^4.17.21",
+    "reflect-metadata": "^0.2.2",
+    "sequelize": "^6.37.5"
+  }
+}

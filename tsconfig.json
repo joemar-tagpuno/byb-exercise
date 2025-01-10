@@ -3,10 +3,25 @@
   "files": [],
   "references": [
     {
-      "path": "packages/common-utils"
+      "path": "apps/api"
     },
     {
-      "path": "packages/example"
+      "path": "packages/auth/core"
+    },
+    {
+      "path": "packages/auth/adapters"
+    },
+    {
+      "path": "packages/asset-manager/core"
+    },
+    {
+      "path": "packages/asset-manager/adapters"
+    },
+    {
+      "path": "packages/shared/core"
+    },
+    {
+      "path": "packages/shared/testing"
     }
   ]
 }
