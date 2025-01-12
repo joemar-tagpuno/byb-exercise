@@ -2,10 +2,10 @@
 
 exports[`InMemoryDownloadableFileRepository > Everything is ok > should return a file object 1`] = `
 {
-  "name": "file-name.pdf",
+  "name": "file-1.pdf",
   "provider": "http",
-  "size": 124,
+  "size": 140,
   "type": "pdf",
-  "url": "http://localhost:123456/file/file-id",
+  "url": "http://localhost:3000/downloadable-files/44a22e81-0ff7-471a-90be-0b49895cd1ca",
 }
 `;

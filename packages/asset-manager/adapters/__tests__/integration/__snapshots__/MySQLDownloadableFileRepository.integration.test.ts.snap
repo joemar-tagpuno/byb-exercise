@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MySQLDownloadableFileRepository > Everything is ok > should return a file object 1`] = `
+{
+  "name": "file-name.pdf",
+  "provider": "http",
+  "size": 124,
+  "type": "pdf",
+  "url": "http://localhost:123456/file/file-id",
+}
+`;

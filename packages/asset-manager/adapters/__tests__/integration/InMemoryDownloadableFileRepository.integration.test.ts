@@ -1,56 +1,24 @@
 import { AssetManagerErrors } from '@byb/asset-manager-core'
-import { QueryTypes, Sequelize } from 'sequelize'
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 import { InMemoryDownloadableFileRepository } from '../../src'
 
 describe('InMemoryDownloadableFileRepository', () => {
   let underTest: InMemoryDownloadableFileRepository
-  let sequelize: Sequelize
 
   beforeEach(async () => {
-    sequelize = new Sequelize('sqlite::memory:')
-    await sequelize.query(
-      `
-        CREATE TABLE downloadable_files (
-            id TEXT PRIMARY KEY,
-            name TEXT,
-            url TEXT,
-            size INTEGER,
-            type TEXT,
-            provider TEXT
-        )`,
-      {
-        type: QueryTypes.RAW,
-      },
-    )
-
-    underTest = new InMemoryDownloadableFileRepository(sequelize)
-  })
-
-  afterEach(async () => {
-    await sequelize.query('DROP TABLE IF EXISTS downloadable_files')
-    await sequelize.close()
+    underTest = new InMemoryDownloadableFileRepository()
   })
 
   describe('Everything is ok', () => {
     it('should return a file object', async () => {
-      // GIVEN
-      await sequelize.query(
-        'INSERT INTO downloadable_files (id, name, url, size, type, provider) VALUES (?, ?, ?, ?, ?, ?)',
-        {
-          replacements: ['file-id', 'file-name.pdf', 'http://localhost:123456/file/file-id', 124, 'pdf', 'http'],
-          type: QueryTypes.INSERT,
-        },
-      )
-
       // WHEN
-      const result = await underTest.findById('file-id')
+      const result = await underTest.findById('44a22e81-0ff7-471a-90be-0b49895cd1ca')
 
       // THEN
       expect(result).toEqual({
-        name: 'file-name.pdf',
-        url: 'http://localhost:123456/file/file-id',
-        size: 124,
+        name: 'file-1.pdf',
+        url: 'http://localhost:3000/downloadable-files/44a22e81-0ff7-471a-90be-0b49895cd1ca',
+        size: 140,
         type: 'pdf',
         provider: 'http',
       })

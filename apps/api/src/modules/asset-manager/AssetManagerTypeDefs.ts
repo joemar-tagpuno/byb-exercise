@@ -5,7 +5,7 @@ export const AssetManagerTypeDefs = gql`
         file: String
         filename: String
         filetype: String
-        filezise: Int
+        filesize: Int
     }
     
     extend type Query {

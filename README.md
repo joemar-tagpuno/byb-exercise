@@ -1,6 +1,6 @@
 # pnpm-monorepo-template
 
-[![Github Actions](https://github.com/jkomyno/pnpm-monorepo-template/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/jkomyno/pnpm-monorepo-template/actions/workflows/ci.yaml)
+[![Github Actions](https://github.com/joemar-tagpuno/byb-exercise/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/joemar-tagpuno/byb-exercise/actions/workflows/ci.yaml)
 
 > Pragmatic template for a `TypeScript` monorepo with [`pnpm`](https://pnpm.io), [`turborepo`](https://turborepo.org), and [`vitest`](https://vitest.dev/).
 
