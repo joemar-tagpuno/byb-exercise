@@ -23,7 +23,7 @@ export class AssetManagerResolvers {
           }
           const request: CustomerSecureFileDownloadRequest = { fileId, userId }
 
-          const isAuthorized = await this._customerSecureFileDownload.canExecute(user, request)
+          const isAuthorized = this._customerSecureFileDownload.canExecute(user, request)
           if (!isAuthorized) {
             throw new GraphQLError('Unauthorized')
           }
@@ -38,7 +38,7 @@ export class AssetManagerResolvers {
           }
           const request: CustomerSecureFileDownloadRequest = { fileId, userId }
 
-          const isAuthorized = await this._customerSecureFileDownload.canExecute(user, request)
+          const isAuthorized = this._customerSecureFileDownload.canExecute(user, request)
           if (!isAuthorized) {
             throw new GraphQLError('Unauthorized')
           }
