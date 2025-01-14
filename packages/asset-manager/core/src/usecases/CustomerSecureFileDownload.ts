@@ -39,7 +39,8 @@ export class CustomerSecureFileDownload
     }
   }
 
-  async canExecute(identity: UserIdentity, request: CustomerSecureFileDownloadRequest): Promise<boolean> {
+  // @ts-ignore
+  canExecute(identity: UserIdentity, request: CustomerSecureFileDownloadRequest): boolean {
     return request.userId === identity.id && identity.userRole === 'user'
   }
 }

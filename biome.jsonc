@@ -129,7 +129,8 @@
         "noShadowRestrictedNames": "error",
         "noUnsafeNegation": "error",
         "useGetterReturn": "error",
-        "useValidTypeof": "error"
+        "useValidTypeof": "error",
+        "useAwait": "error"
       }
     }
   }

@@ -5,7 +5,7 @@ import { InMemoryDownloadableFileRepository } from '../../src'
 describe('InMemoryDownloadableFileRepository', () => {
   let underTest: InMemoryDownloadableFileRepository
 
-  beforeEach(async () => {
+  beforeEach(() => {
     underTest = new InMemoryDownloadableFileRepository()
   })
 

@@ -5,7 +5,8 @@ import { injectable } from 'inversify'
 
 @injectable()
 export class LocalFileLoaderGateway implements DownloadableFileLoader {
-  async load(url: string, provider: string): Promise<Buffer> {
+  // @ts-ignore
+  load(url: string, provider: string): Buffer {
     try {
       return fs.readFileSync(path.resolve(__dirname, './assets/test-pdf-file.pdf'))
     } catch (error) {
